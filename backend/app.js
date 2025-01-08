@@ -13,26 +13,16 @@ app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use("/api/v1/langflow", langflowRoutes); // Mount the Langflow routes
 
-if (process.env.NODE_ENV === "production") {
-  // Serve static frontend files
-  app.use(express.static(path.resolve(_dirname, "frontend", "dist")));
-
-  // Fallback for SPA routing
-  app.get("*", (req, res, next) => {
-    const filePath = path.resolve(_dirname, "frontend", "dist", "index.html");
-    //console.log("rohan", filePath);
-    res.sendFile(filePath, (err) => {
-      if (err) {
-        console.error(err);
-        res.status(500).send("Error loading the frontend.");
-      }
-    });
-  });
-} else {
+// Serve static assets in production
   app.get("/", (req, res) => {
     res.send("API is Running Successfully");
   });
-}
+
+  app.use("*", (req, res) => {
+    res.send("Invalid Endpoint");
+  }
+);
+
 
 // Export the app for deployment
 export { app };
