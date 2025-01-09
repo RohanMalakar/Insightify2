@@ -1,3 +1,6 @@
+
+---
+
 # 🚀 **Insightify** 🌟  
 **A MERN stack-based web application for tracking and analyzing social media performance.**  
 
@@ -6,16 +9,18 @@ Gain actionable insights, monitor engagement metrics, and optimize your social m
 ---
 
 ## ✨ **Features**  
+- 🔒 **User Authentication:** Secure login and signup functionality.  
+- 📊 **Dashboard Analytics:** View metrics like likes, comments, and shares.  
 - 🛠️ **Customizable Insights:** Generate insights for specific posts or campaigns.  
 - 🔄 **Real-Time Updates:** Automatically fetch and display the latest data.  
- 
+- 📈 **Interactive Charts:** Visualize trends with dynamic graphs and charts.  
 
 ---
 
 ## 🛠️ **Technology Stack**
 
 ### **Frontend:**  
-🎨 **React.js** | 📉 **Chart.js** |   
+🎨 **React.js** | 📉 **Chart.js** | 🖌️ **Tailwind CSS**  
 
 ### **Backend:**  
 💻 **Node.js** | ⚡ **Express.js**  
@@ -28,16 +33,65 @@ Gain actionable insights, monitor engagement metrics, and optimize your social m
 
 ---
 
+## 🗂️ **Directory Structure**  
+
+```
+└── RohanMalakar-Insightify2/
+    ├── README.md
+    ├── backend/
+    │   ├── app.js                    # Express app configuration
+    │   ├── index.js                  # Entry point for the backend
+    │   ├── package.json              # Backend dependencies
+    │   ├── controllers/
+    │   │   └── LangFlow.controller.js  # Handles LangFlow-related logic
+    │   ├── db/
+    │   │   └── index.js              # Database connection setup
+    │   ├── routes/
+    │   │   └── LangFlow.route.js     # API routes for LangFlow
+    │   └── utills/
+    │       ├── ApiError.js           # Handles API error responses
+    │       ├── ApiResponse.js        # Standardized API responses
+    │       ├── LangflowClient.js     # LangFlow client logic
+    │       └── asyncHandler.js       # Middleware for async/await error handling
+    └── client/
+        ├── README.md                 # Frontend documentation
+        ├── index.html                # Root HTML file
+        ├── package.json              # Frontend dependencies
+        ├── vite.config.js            # Vite configuration
+        ├── src/
+            ├── App.jsx               # Main application component
+            ├── main.jsx              # Frontend entry point
+            ├── Componets/            # UI components
+            │   ├── Card.jsx          # Card component for analytics
+            │   ├── CardSlider.jsx    # Slider for content cards
+            │   ├── Footer.jsx        # Footer section
+            │   ├── GradientText.jsx  # Text with gradient styling
+            │   ├── Header.jsx        # Page header
+            │   ├── LangflowApp.jsx   # LangFlow integration
+            │   ├── Loader.jsx        # Loading spinner
+            │   ├── OurActualteam.jsx # Team showcase component
+            │   └── SplitText.jsx     # Animation for split text
+            ├── Pages/                # Pages for routing
+            │   ├── Home.jsx          # Home page
+            │   └── NotFoundPage.jsx  # 404 page
+            ├── Utils/                # Utility functions
+            │   └── LangflowClient.js # Handles LangFlow API calls
+            └── assets/
+                └── Images/           # Static assets for the application
+```
+
+---
+
 ## 📚 **Setup Instructions**
 
 ### 1️⃣ **Clone the Repository**  
 ```bash
 git clone https://github.com/RohanMalakar/Insightify2.git
-cd Insightify2
+cd RohanMalakar-Insightify2
 ```
 
 ### 2️⃣ **Create a .env File**  
-Create a `.env` file in the root directory with the following:  
+Create a `.env` file in the backend directory with the following:  
 ```env
 PORT=3001
 CORS_ORIGIN=*
@@ -51,15 +105,15 @@ ASTRADB_TOKEN="Your_AstraDB_Token"
 
 ### 3️⃣ **Install Dependencies**  
 
-#### **For Backend:**  
+#### **Backend:**  
 ```bash
 cd backend
 npm install
 ```  
 
-#### **For Frontend:**  
+#### **Frontend:**  
 ```bash
-cd ../frontend
+cd ../client
 npm install
 ```  
 
@@ -68,7 +122,7 @@ npm install
 #### Start the Backend:  
 ```bash
 cd backend
-npm run dev
+npm start
 ```  
 
 #### Start the Frontend:  
@@ -78,20 +132,6 @@ npm run dev
 ```  
 
 🌐 Access the app at **`http://localhost:3000`**  
-
----
-
-## 🗂️ **Folder Structure**  
-
-### **Backend:**  
-📁 `routes/` – API routes for data handling.  
-📁 `middleware/` – Middleware for cross-origin requests.  
-📁 `utils/` – Helper functions for database interactions.  
-
-### **Frontend:**  
-📁 `src/components/` – React components for UI.  
-📁 `src/pages/` – Pages for routing (e.g. Dashboard).  
-📁 `src/utils/` – Utility functions and helpers.  
 
 ---
 
@@ -110,16 +150,12 @@ npm run dev
 
 ---
 
-## 💡 **Notes**  
-- ⚠️ Ensure your `.env` file is configured with appropriate tokens and URLs.  
-- 🔑 Use strong secrets for authentication and data security.  
-
----
-
 ## 📜 **License**  
 Licensed under the [MIT License](LICENSE).  
 
 ---
 
 ## 📞 **Contact**  
-For queries or collaboration, reach out to **[Rohan Malakar](mailto:rohanmalakar5091@gmail.com.com)**.  
+For queries or collaboration, reach out to **[Rohan Malakar](mailto:rohanmalakar5091@gmail.com)**.  
+
+---
