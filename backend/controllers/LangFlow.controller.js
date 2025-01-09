@@ -9,7 +9,6 @@ const runLangflow = async (req, res) => {
     const langflowId = process.env.LANGFLOW_ID;
     const applicationToken = process.env.LANGFLOW_TOKEN;
     
-
     const langflowClient = new LangflowClient('https://api.langflow.astra.datastax.com', applicationToken);
 
     try {
