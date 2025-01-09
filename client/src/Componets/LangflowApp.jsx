@@ -138,7 +138,7 @@ function LangflowApp() {
             <img src={spinner} alt="Loading..." className="w-16 h-16" />
           </div>
         )}
-        <div className="w-full h-full lg:h-[70%] flex justify-end py-8">
+        <div className="w-full h-full lg:ml-4 lg:h-[70%] lg:pb-3 flex justify-end ">
           <img src={robotr} alt="Robot Animation" className="lg:w-full  lg:h-full " />
         </div>
       </div>
