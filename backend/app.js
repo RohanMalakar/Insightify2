@@ -10,8 +10,7 @@ const _dirname = path.resolve();
 
 app.use(cors(
     {
-    origin: "*",
-    //origin: "https://insightify2-phi.vercel.app",
+    origin: "https://insightify2-phi.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   }
