@@ -7,7 +7,6 @@ import SplitText from '../Componets/SplitText.jsx';
 import { Link, Navigate } from 'react-router-dom';
 
 
-
 const HomePage = () => {
   
 
@@ -30,12 +29,21 @@ const HomePage = () => {
           <p className="text-lg mb-6">
             Real-time social media analytics made simple with LangFlow and DataStax.
           </p>
-          <button className="bg-white text-blue-500 px-6 py-3 font-bold rounded-md hover:bg-gray-100 transition duration-300 animate-bounce"
-          >
-            <Link to={"/chat"}>
-               Get Started
-            </Link>
-          </button>
+          <div className='flex justify-center gap-4'>
+            <button className="bg-white text-blue-500 px-6 py-3 font-bold rounded-md hover:bg-gray-100 transition duration-300 animate-bounce"
+            >
+              <Link to={"/chat"}>
+                Get Started
+              </Link>
+            </button>
+            <button className="bg-white text-blue-500 px-6 py-3 font-bold rounded-md hover:bg-gray-100 transition duration-300 animate-bounce"
+            >
+              <Link to={"/dashboard"}>
+                View Dashboard
+              </Link>
+            </button>
+            
+          </div>
         </div>
       </header>
 

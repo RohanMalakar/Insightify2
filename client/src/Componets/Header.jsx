@@ -67,7 +67,7 @@ function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white shadow-md py-4">
+        <div className="md:hidden bg-black shadow-md py-4">
           <ul className="space-y-4 px-6">
             <li>
               <Link
@@ -106,7 +106,7 @@ function Header() {
               }}
             >
               <Link className="flex items-center gap-2">
-                <FaGithub className="text-2xl text-white hover:text-teal-300" />
+                <FaGithub className="text-2xl text-purple-600 hover:text-teal-300" />
                 <span className="text-lg font-bold hover:text-teal-300">Github</span>
               </Link>
             </li>
