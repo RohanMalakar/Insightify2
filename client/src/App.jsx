@@ -6,6 +6,9 @@ import Header from "./Componets/Header.jsx";
 import Footer from "./Componets/Footer.jsx";
 import ChatBox from "./Componets/ChatBotComp/ChatBox.jsx";
 import '../src/App.css'
+import Dashboard from "./Pages/Dashboard.jsx";
+
+
 
 function App() {
     let [hideChatBot,setHideChatBot] = useState(true)
