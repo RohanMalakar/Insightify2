@@ -9,7 +9,6 @@ import homeImage from '../assets/Images/homeImage.png'
 
 const HomePage = () => {
 
-
   return (
     <div className="bg-gray-50">        
       {/* Top Section */}
@@ -35,7 +34,7 @@ const HomePage = () => {
           </button>
             </Link>
           
-          <Link to={"/chat"}>
+          <Link to={"/dashboard"}>
           <button
             className="bg-indigo-600 text-white px-3 py-2 md:py-3 md:font-bold font-[600] rounded-md hover:bg-indigo-700 transition duration-300  w-[100%] mt-5 flex items-center gap-2 hover:scale-105" >
               View Deshboard

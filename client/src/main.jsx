@@ -7,6 +7,7 @@ import OurActualteam from './Componets/TeamePage/OurActualteam.jsx'
 import NotFoundPage from './Pages/NotFoundPage.jsx'
 import Home from './Componets/Home.jsx'
 import { StrictMode } from 'react'
+import Dashboard from "./Pages/Dashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/ourteam', element: <OurActualteam /> },
+      { path: '/dashboard', element: <Dashboard /> },
       { path: '*', element: <NotFoundPage /> }
     ]
   }
