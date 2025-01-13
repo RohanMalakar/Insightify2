@@ -55,29 +55,50 @@ const audienceData = [
 
 const COLORS = ["#8B5CF6", "#A78BFA", "#C4B5FD", "#D8B4FE"];
 
+const keys = [
+  "post_id",
+  "user_id",
+  "post_type",
+  "likes",
+  "comments",
+  "share",
+  "reach",
+  "timestamp",
+  "content_length"
+];
+
 
 const Dashboard = () => {
   
   const [posts, setPosts] = useState([]);
-
   async function getAllPosts() {
     try {
       const response = await axiosInstance.get("/posts");
-      console.log("Response from server:", response.data);
+      
+      // Access the `data` field which contains the array of posts
+      const posts = response.data.data;
   
-      // Assuming response.data contains the array of documents
-      if (response.data && Array.isArray(response.data)) {
-        response.data.forEach(doc => {
-          console.log('Document:', doc);
-          // Assuming `setPosts()` sets the posts state
-          setPosts(prevPosts => [...prevPosts, doc]);  // Append each document to the state
+      if (posts && Array.isArray(posts)) {
+        posts.forEach((post) => {
+          const parsedData = post.content
+          .split("\n").map(line => {
+            const values = line.split(","); // Split the line by commas
+            return keys.reduce((obj, key, index) => {
+              obj[key] = isNaN(values[index]) || key === "post_type" || key === "timestamp"
+                ? values[index]
+                : Number(values[index]); // Convert numeric fields to numbers
+              return obj;
+            }, {});
+          });
+          setPosts((prevPosts) => [...prevPosts, ...parsedData]); 
         });
+      } else {
+        console.log("No posts available.");
       }
     } catch (error) {
-      console.log('Error fetching posts:', error.message);
+      console.error("Error fetching posts:", error.message);
     }
   }
-  
   
   useEffect(() => {
     getAllPosts();

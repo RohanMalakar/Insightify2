@@ -158,7 +158,6 @@ const ChatBox = ({ hideChatBot, setHideChatBot }) => {
     setIsDragging(false);
   };
   
-  console.log(history)
   return (
     <div
       id="chatbox"
