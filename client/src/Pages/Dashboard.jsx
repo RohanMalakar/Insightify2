@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import axiosInstance from "../utills/axiosInstance";
+import EngagementOverview from "./EngagementChart.jsx";
 import {
   BarChart,
   Bar,
@@ -52,7 +55,35 @@ const audienceData = [
 
 const COLORS = ["#8B5CF6", "#A78BFA", "#C4B5FD", "#D8B4FE"];
 
+
 const Dashboard = () => {
+  
+  const [posts, setPosts] = useState([]);
+
+  async function getAllPosts() {
+    try {
+      const response = await axiosInstance.get("/posts");
+      console.log("Response from server:", response.data);
+  
+      // Assuming response.data contains the array of documents
+      if (response.data && Array.isArray(response.data)) {
+        response.data.forEach(doc => {
+          console.log('Document:', doc);
+          // Assuming `setPosts()` sets the posts state
+          setPosts(prevPosts => [...prevPosts, doc]);  // Append each document to the state
+        });
+      }
+    } catch (error) {
+      console.log('Error fetching posts:', error.message);
+    }
+  }
+  
+  
+  useEffect(() => {
+    getAllPosts();
+  }, []);
+  
+
   return (
     <div className="min-h-screen bg-black text-purple-400 lg:px-28 lg:py-20">
       <h1 className="text-4xl font-bold text-center mb-8">Engagement Dashboard</h1>
@@ -142,6 +173,10 @@ const Dashboard = () => {
             <Tooltip contentStyle={{ backgroundColor: "#1F2937", color: "#A78BFA" }} />
           </PieChart>
         </div>
+        <div>
+          hello
+        </div>
+        <EngagementOverview/>
       </div>
     </div>
   );
